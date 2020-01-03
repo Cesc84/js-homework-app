@@ -1,0 +1,23 @@
+form {
+  .form-group {
+    padding-bottom: 1rem;
+    label,
+    select,
+    input {
+      display: block;
+      width: 100%;
+      border: none;
+      &:not(label) {
+        height: 35px;
+        background-color: $lightblue;
+      }
+    }
+    label {
+      font-size: 16px;
+    }
+    @include placeholder {
+      color: $black;
+      padding-left: .5rem;
+    }
+  }
+}

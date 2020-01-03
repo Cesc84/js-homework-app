@@ -1,0 +1,14 @@
+
+.card {
+  width: 100%;
+  background: $green;
+  color: $white;
+  padding: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+  .status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}

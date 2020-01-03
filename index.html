@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+
+<body onload="fetchHomeworks()">
+  <div class="container">
+    <h1>App</h1>
+    <div class="wrapper">
+      <h3>Add New Task</h3>
+      <form id="hwInputForm">
+        <div class="form-group">
+          <label for="hwDescInput">Description</label>
+          <input id="hwDescInput" type="text" class="form-control" placeholder="Describe homework">
+        </div>
+        <div class="form-group">
+          <label for="hwPriorityInput">Priority</label>
+          <select id="hwPriorityInput" class="form-control">
+            <option value="Low">Low</option>
+            <option value="Low">Medium</option>
+            <option value="Low">High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="subjectInput">Subject</label>
+          <input id="subjectInput" type="text" class="form-control" placeholder="Subject">
+        </div>
+        <button class="button" type="submit" value="submit">Add</button>
+      </form>
+    </div>
+    <div class="large-12">
+      <div id="hwList"></div>
+    </div>
+    <div class="footer">
+      <p>&copy Cesc2020</p>
+    </div>
+  </div>
+  <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
+  <script src="http://chancejs.com/chance.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
