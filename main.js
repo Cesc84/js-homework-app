@@ -8,6 +8,7 @@ function saveHw(e) {
   var homeworkId = chance.guid();
   var hwStatus = 'Open';
 
+  // create new homerowk object
   var homework = {
     id: homeworkId,
     description: hwDesc,
@@ -15,19 +16,21 @@ function saveHw(e) {
     subject: hwSubject,
     status: hwStatus
   }
-
+  // insterting object to local storage
+    // retireving data with getItem
   if(localStorage.getItem('homeworks') == null) {
-    console.log('empty');
     var homeworks = [];
     homeworks.push(homework);
+    // generate the json object converting the array to the json format
     localStorage.setItem('homeworks', JSON.stringify(homeworks));
   } else {
-    console.log('there is data');
+    // if the is data we insert a new object retrieving everything that inspect
+    // currently in the localStorage
     var homeworks = JSON.parse(localStorage.getItem('homeworks'));
     homeworks.push(homework);
     localStorage.setItem('homeworks', JSON.stringify(homeworks));
   }
-
+  // reset the input elements
   document.getElementById('hwInputForm').reset();
 
   fetchHomeworks();
@@ -36,6 +39,37 @@ function saveHw(e) {
 
 }
 
+// Change Open Status
+function setStatusClosed(id) {
+  // retrieve everything from local storage and put it into the homeworks array
+  var homeworks = JSON.parse(localStorage.getItem('homeworks'));
+
+  for(var i = 0; i < homeworks.length; i++) {
+    if(homeworks[i].id == id) {
+      homeworks[i].status = 'Closed';
+    }
+  }
+  // converting the array to the json format
+  localStorage.setItem('homeworks', JSON.stringify(homeworks));
+  // update the output
+  fetchHomeworks();
+}
+
+// Delete Homework
+function deleteHm(id) {
+  var homeworks = JSON.parse(localStorage.getItem('homeworks'));
+
+  for(var i = 0; i < homeworks.length; i++) {
+    if(homeworks[i].id == id) {
+      // remove element from the array
+      homeworks.splice(i, 1);
+    }
+  }
+
+  localStorage.setItem('homeworks', JSON.stringify(homeworks));
+  // update the output
+  fetchHomeworks();
+}
 
 function fetchHomeworks() {
   var homeworks = JSON.parse(localStorage.getItem('homeworks'));
