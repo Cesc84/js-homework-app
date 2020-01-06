@@ -7,7 +7,13 @@
   font-size: 16px;
   border-radius: 15px;
   letter-spacing: 1.5px;
+  @include breakpoint-phone {
+    padding: .4rem 3rem;
+  }
   &.delete {
     margin-left: 2rem;
+    @include breakpoint-phone {
+      margin-left: 1rem;
+    }
   }
 }

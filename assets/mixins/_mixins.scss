@@ -12,3 +12,14 @@
   ::-moz-placeholder          {@content}
   :-ms-input-placeholder      {@content}
 }
+
+
+@mixin breakpoint-phone {
+     @media (max-width: 600px) { @content };
+}
+@mixin breakpoint-tablet-port {
+     @media (max-width: 900px) { @content };
+}
+@mixin breakpoint-tablet-land {
+     @media (max-width: 1200px) { @content };
+}
