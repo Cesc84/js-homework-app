@@ -2,10 +2,11 @@
   display: inline-block;
   background: $purple;
   border: 1px solid $white;
-  padding: 1rem 3rem;
+  padding: .5rem 4rem;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 15px;
+  letter-spacing: 1.5px;
   &.delete {
     margin-left: 2rem;
   }

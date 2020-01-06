@@ -58,26 +58,28 @@ form .form-group {
   form .form-group input {
     display: block;
     width: 100%;
-    border: none; }
+    border: none;
+    letter-spacing: 1.5px;
+    outline: none; }
     form .form-group label:not(label),
     form .form-group select:not(label),
     form .form-group input:not(label) {
       height: 35px;
       background-color: #f4edf7; }
+  form .form-group input {
+    padding-left: .5rem; }
   form .form-group label {
     font-size: 16px; }
   form .form-group ::-webkit-input-placeholder {
-    color: #17202A;
-    padding-left: .5rem; }
+    color: #17202A; }
   form .form-group :-moz-placeholder {
-    color: #17202A;
-    padding-left: .5rem; }
+    color: #17202A; }
   form .form-group ::-moz-placeholder {
-    color: #17202A;
-    padding-left: .5rem; }
+    color: #17202A; }
   form .form-group :-ms-input-placeholder {
-    color: #17202A;
-    padding-left: .5rem; }
+    color: #17202A; }
+form .button {
+  border: 1px solid #17202A; }
 
 .card {
   width: 100%;
@@ -92,7 +94,7 @@ form .form-group {
   -webkit-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
-  z-index: -1; }
+  z-index: 0; }
   .card::after {
     content: '';
     position: absolute;
@@ -123,10 +125,11 @@ form .form-group {
   display: inline-block;
   background: #C39BD3;
   border: 1px solid #FFFFFF;
-  padding: 1rem 3rem;
+  padding: .5rem 4rem;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 8px; }
+  border-radius: 15px;
+  letter-spacing: 1.5px; }
   .button.delete {
     margin-left: 2rem; }
 

@@ -7,17 +7,24 @@ form {
       display: block;
       width: 100%;
       border: none;
+      letter-spacing: 1.5px;
+      outline: none;
       &:not(label) {
         height: 35px;
         background-color: $lightpurple;
       }
+    }
+    input {
+      padding-left: .5rem;
     }
     label {
       font-size: 16px;
     }
     @include placeholder {
       color: $black;
-      padding-left: .5rem;
     }
+  }
+  .button {
+    border: 1px solid $black;
   }
 }

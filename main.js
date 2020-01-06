@@ -99,7 +99,7 @@ function fetchHomeworks() {
                         '<a href="#" onclick="deleteHm(\''+id+'\')" class="button delete">Delete</a>'+
                         '</div>';
   }
-changeBg();
+  changeBg();
   // localStorage.clear();
 }
 
@@ -115,7 +115,7 @@ function changeBg() {
         card[i].style.backgroundImage = "url('../assets/img/geo.jpg')";
         break;
       case "Math":
-        card[i].style.backgroundImage = "url('../assets/img/geo.jpg')";
+        card[i].style.backgroundImage = "url('../assets/img/math.jpg')";
         break;
     }
   }
