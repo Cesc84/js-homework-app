@@ -6,9 +6,9 @@
 body {
   width: 100%;
   height: 100vh;
-  background: #F2F3F4;
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Montserrat', Arial, sans-serif;
-  color: #FFFFFF;
   line-height: 1.5;
   letter-spacing: 1.5px; }
 
@@ -17,7 +17,10 @@ body {
   margin: auto;
   padding: 2rem; }
   .container .wrapper {
-    background: #85C1E9;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
     padding: 2rem; }
     .container .wrapper h3 {
       margin-bottom: 1rem; }
@@ -60,7 +63,7 @@ form .form-group {
     form .form-group select:not(label),
     form .form-group input:not(label) {
       height: 35px;
-      background-color: #E6F3FF; }
+      background-color: #f4edf7; }
   form .form-group label {
     font-size: 16px; }
   form .form-group ::-webkit-input-placeholder {
@@ -88,15 +91,44 @@ form .form-group {
     top: 1rem;
     right: 1rem; }
 
-.button {
-  display: inline-block;
-  background: #C39BD3;
-  border: 1px solid #FFFFFF;
-  padding: 1rem 3rem;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 8px; }
-  .button.delete {
-    margin-left: 2rem; }
+.card {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFFFFF;
+  padding: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 28px -10px rgba(0, 0, 0, 0.75);
+  z-index: -1; }
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: red;
+    opacity: .2;
+    z-index: -2; }
+  .card #status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+  .card .info-dl:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .card .info-dl #subject {
+    float: left;
+    width: 50%; }
+  .card .info-dl #deadline {
+    float: right;
+    width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

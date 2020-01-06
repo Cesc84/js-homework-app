@@ -2,18 +2,20 @@
 document.getElementById('hwInputForm').addEventListener('submit', saveHw);
 
 function saveHw(e) {
+  var hwSubject = document.getElementById('subjectInput').value;
+  var hwDeadline = document.getElementById('deadlineInput').value;
   var hwDesc = document.getElementById('hwDescInput').value;
   var hwPriority = document.getElementById('hwPriorityInput').value;
-  var hwSubject = document.getElementById('subjectInput').value;
   var homeworkId = chance.guid();
   var hwStatus = 'Open';
 
   // create new homerowk object
   var homework = {
     id: homeworkId,
+    subject: hwSubject,
+    deadline: hwDeadline,
     description: hwDesc,
     priority: hwPriority,
-    subject: hwSubject,
     status: hwStatus
   }
   // insterting object to local storage
@@ -69,6 +71,7 @@ function deleteHm(id) {
   localStorage.setItem('homeworks', JSON.stringify(homeworks));
   // update the output
   fetchHomeworks();
+
 }
 
 function fetchHomeworks() {
@@ -79,20 +82,41 @@ function fetchHomeworks() {
 
   for (var i = 0; i < homeworks.length; i++) {
     var id = homeworks[i].id;
+    var subject = homeworks[i].subject;
+    var deadline = homeworks[i].deadline;
     var desc = homeworks[i].description;
     var priority = homeworks[i].priority;
-    var subject = homeworks[i].subject;
     var status = homeworks[i].status;
 
     hwList.innerHTML += '<div class="card">'+
                         '<h6>Issue ID: ' + id + '</h6>'+
-                        '<span class="status">' + status + '</span>'+
-                        '<h4><span class="icon"></span>' + subject + '</h4>'+
+                        '<span id="status">' + status + '</span>'+
+                        '<div class="info-dl"><h4 id="subject">' + subject + '</h4>'+
+                        '<h6 id="deadline">' + deadline + '</h6></div>'+
                         '<p>' + desc + '</p>'+
-                        '<h6><span class="icon"></span>' + priority + '</h6>'+
+                        '<h6>' + priority + '</h6>'+
                         '<a href="#" onclick="setStatusClosed(\''+id+'\')" class="button close">Close</a>'+
                         '<a href="#" onclick="deleteHm(\''+id+'\')" class="button delete">Delete</a>'+
                         '</div>';
   }
+changeBg();
   // localStorage.clear();
+}
+
+function changeBg() {
+  var homeworks = JSON.parse(localStorage.getItem('homeworks'));
+  var card = document.getElementsByClassName('card');
+
+
+  for (var i = 0; i < homeworks.length; i++) {
+    var subject = homeworks[i].subject;
+    switch (subject) {
+      case "Geo":
+        card[i].style.backgroundImage = "url('../assets/img/geo.jpg')";
+        break;
+      case "Math":
+        card[i].style.backgroundImage = "url('../assets/img/math.jpg')";
+        break;
+    }
+  }
 }
