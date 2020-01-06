@@ -81,18 +81,6 @@ form .form-group {
 
 .card {
   width: 100%;
-  background: #7DCEA0;
-  color: #FFFFFF;
-  padding: 2rem;
-  position: relative;
-  margin-bottom: 2rem; }
-  .card .status {
-    position: absolute;
-    top: 1rem;
-    right: 1rem; }
-
-.card {
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -130,5 +118,16 @@ form .form-group {
   .card .info-dl #deadline {
     float: right;
     width: 50%; }
+
+.button {
+  display: inline-block;
+  background: #C39BD3;
+  border: 1px solid #FFFFFF;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px; }
+  .button.delete {
+    margin-left: 2rem; }
 
 /*# sourceMappingURL=style.css.map */
