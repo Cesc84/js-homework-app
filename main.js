@@ -115,7 +115,7 @@ function changeBg() {
         card[i].style.backgroundImage = "url('../assets/img/geo.jpg')";
         break;
       case "Math":
-        card[i].style.backgroundImage = "url('../assets/img/math.jpg')";
+        card[i].style.backgroundImage = "url('../assets/img/geo.jpg')";
         break;
     }
   }
